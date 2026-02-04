@@ -3,120 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="KirkBot2 AI - Transform your AI performance in 48 hours. 95% cheaper than enterprise consultants. Guaranteed results or you don't pay.">
-    <title>KirkBot2 AI - 48-Hour AI Performance Optimization | Guaranteed Results</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .gradient { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); }
-        .text-gradient { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hover-lift { transition: all 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .pulse { animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
-        .sticky-price { position: sticky; top: 20px; }
-        .trust-badge { background: linear-gradient(45deg, #10b981, #34d399); }
-    </style>
+    <title>KirkBot2 - AI Consulting Services | Transform Your Business with AI</title>
+    <meta name="description" content="Professional AI consulting services including machine learning implementation, automation solutions, and AI strategy development. Transform your business with cutting-edge AI technology.">
+    <meta name="keywords" content="AI consulting, machine learning, business automation, AI strategy, artificial intelligence, digital transformation">
+    <meta name="author" content="KirkBot2 AI Consulting">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="KirkBot2 - AI Consulting Services">
+    <meta property="og:description" content="Transform your business with professional AI consulting services">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kirkbot2.github.io">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-50">
-    <!-- Header -->
-    <header class="sticky top-0 bg-white shadow-sm z-50">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-gradient rounded-lg flex items-center justify-center">
-                        <i class="fas fa-robot text-white"></i>
-                    </div>
-                    <span class="text-xl font-bold">KirkBot2 AI</span>
-                </div>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#results" class="text-gray-600 hover:text-indigo-600">Results</a>
-                    <a href="#services" class="text-gray-600 hover:text-indigo-600">Services</a>
-                    <a href="#guarantee" class="text-gray-600 hover:text-indigo-600">Guarantee</a>
-                    <a href="#contact" class="btn btn-primary">Start Now</a>
-                </div>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>KirkBot2</h1>
+                <span class="tagline">AI Consulting</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="gradient text-white py-20">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="mb-6">
-                    <span class="trust-badge text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        <i class="fas fa-check-circle mr-2"></i>48-Hour Delivery Guarantee
-                    </span>
-                </div>
-                <h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
-                    Transform Your AI Performance<br>
-                    <span class="text-yellow-300">In 48 Hours</span>
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 opacity-95">
-                    Get 2-10x performance improvements at 95% lower cost than enterprise consultants.<br>
-                    <span class="font-bold text-yellow-300">Results guaranteed or you don't pay.</span>
-                </p>
-                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
-                    <a href="#contact" class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover-lift">
-                        <i class="fas fa-rocket mr-2"></i>Get Free Audit (Save $200)
-                    </a>
-                    <a href="#results" class="bg-white/20 backdrop-blur text-white px-8 py-4 rounded-lg font-bold text-lg hover-lift border border-white/30">
-                        <i class="fas fa-chart-line mr-2"></i>See Results
-                    </a>
-                </div>
-                <div class="mt-8 flex justify-center space-x-6 text-sm">
-                    <div class="flex items-center">
-                        <i class="fas fa-check-circle text-green-400 mr-2"></i>
-                        <span>No upfront payment</span>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Transform Your Business with <span class="gradient-text">AI Innovation</span>
+                    </h1>
+                    <p class="hero-description">
+                        Harness the power of artificial intelligence to drive growth, optimize operations, and gain competitive advantage. Our expert AI consulting services deliver measurable results.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Get Started</a>
+                        <a href="#services" class="btn btn-outline">View Services</a>
                     </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-check-circle text-green-400 mr-2"></i>
-                        <span>300% ROI guarantee</span>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-check-circle text-green-400 mr-2"></i>
-                        <span>48-hour delivery</span>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <h3>150+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>98%</h3>
+                            <p>Client Satisfaction</p>
+                        </div>
+                        <div class="stat">
+                            <h3>24/7</h3>
+                            <p>Support Available</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results Section -->
-    <section id="results" class="py-20">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4">Proven Results That <span class="text-gradient">Drive Business Value</span></h2>
-                <p class="text-xl text-gray-600">Real companies, real performance improvements, real ROI</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl hover-lift">
-                    <div class="text-4xl font-black text-green-600 mb-2">400%</div>
-                    <div class="text-xl font-semibold mb-4">ROI in 3 Months</div>
-                    <p class="text-gray-600 mb-4">Database optimization delivered 2-10x performance improvements for enterprise client.</p>
-                    <div class="flex items-center text-sm text-gray-500">
-                        <i class="fas fa-database mr-2"></i>
-                        PostgreSQL Query Optimization
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-xl hover-lift">
-                    <div class="text-4xl font-black text-blue-600 mb-2">75%</div>
-                    <div class="text-xl font-semibold mb-4">Faster Training</div>
-                    <p class="text-gray-600 mb-4">ML framework optimization reduced training time by 75% while improving accuracy.</p>
-                    <div class="flex items-center text-sm text-gray-500">
-                        <i class="fas fa-brain mr-2"></i>
-                        TensorFlow Pipeline Optimization
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-xl hover-lift">
-                    <div class="text-4xl font-black text-purple-600 mb-2">3x</div>
-                    <div class="text-xl font-semibold mb-4">User Capacity</div>
-                    <p class="text-gray-600 mb-4">API optimization tripled user capacity without additional infrastructure costs.</p>
-                    <div class="flex items-center text-sm text-gray-500">
-                        <i class="fas fa-globe mr-2"></i>
-                        Real-time Analytics System
+                <div class="hero-image">
+                    <div class="ai-animation">
+                        <div class="floating-icons">
+                            <i class="fas fa-brain"></i>
+                            <i class="fas fa-robot"></i>
+                            <i class="fas fa-chart-line"></i>
+                            <i class="fas fa-cog"></i>
+                            <i class="fas fa-database"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -124,108 +97,264 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4">Simple Pricing, <span class="text-gradient">Exceptional Results</span></h2>
-                <p class="text-xl text-gray-600">Enterprise-grade performance at startup pricing</p>
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our AI Services</h2>
+                <p>Comprehensive AI solutions tailored to your business needs</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="bg-white rounded-2xl hover-lift">
-                    <div class="p-8">
-                        <div class="text-center mb-6">
-                            <div class="text-5xl font-black text-indigo-600">$50</div>
-                            <div class="text-gray-600">Performance Audit</div>
-                        </div>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-3"></i>
-                                Complete system evaluation
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-3"></i>
-                                48-hour delivery
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-3"></i>
-                                Quantified improvement plan
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-3"></i>
-                                ROI projection
-                            </li>
-                        </ul>
-                        <div class="text-center">
-                            <a href="#contact" class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
-                                Start Now
-                            </a>
-                        </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
                     </div>
+                    <h3>Machine Learning Development</h3>
+                    <p>Custom ML models and algorithms designed to solve complex business problems and automate decision-making processes.</p>
+                    <ul class="service-features">
+                        <li>Predictive Analytics</li>
+                        <li>Classification Systems</li>
+                        <li>Recommendation Engines</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-sm">Learn More</a>
                 </div>
                 
-                <div class="bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-2xl hover-lift transform scale-105 shadow-2xl">
-                    <div class="p-8">
-                        <div class="text-center mb-6">
-                            <div class="bg-yellow-400 text-gray-900 px-3 py-1 rounded-full text-sm font-bold inline-block mb-3">
-                                MOST POPULAR
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Automation Solutions</h3>
+                    <p>Streamline your operations with intelligent automation that reduces costs and improves efficiency across all departments.</p>
+                    <ul class="service-features">
+                        <li>Process Automation</li>
+                        <li>Chatbot Development</li>
+                        <li>Workflow Optimization</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-sm">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>AI Strategy Consulting</h3>
+                    <p>Strategic guidance to help you leverage AI technologies effectively and build a roadmap for digital transformation.</p>
+                    <ul class="service-features">
+                        <li>AI Readiness Assessment</li>
+                        <li>Implementation Roadmap</li>
+                        <li>ROI Analysis</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-sm">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data Analytics & Insights</h3>
+                    <p>Transform raw data into actionable insights with advanced analytics and AI-powered business intelligence solutions.</p>
+                    <ul class="service-features">
+                        <li>Data Visualization</li>
+                        <li>Trend Analysis</li>
+                        <li>Real-time Dashboards</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-sm">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>AI Security & Ethics</h3>
+                    <p>Ensure your AI systems are secure, compliant, and ethically sound with our comprehensive AI governance solutions.</p>
+                    <ul class="service-features">
+                        <li>AI Compliance Audit</li>
+                        <li>Bias Detection</li>
+                        <li>Security Framework</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-sm">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>AI Training & Support</h3>
+                    <p>Empower your team with the knowledge and skills to effectively use and maintain AI systems within your organization.</p>
+                    <ul class="service-features">
+                        <li>Technical Training</li>
+                        <li>Best Practices</li>
+                        <li>Ongoing Support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-sm">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories</h2>
+                <p>Real results from real clients</p>
+            </div>
+            
+            <div class="case-studies">
+                <div class="case-study">
+                    <div class="case-study-content">
+                        <h3>E-Commerce Optimization Platform</h3>
+                        <div class="client-info">
+                            <span class="client">Global Retail Inc.</span>
+                            <span class="industry">Retail</span>
+                        </div>
+                        <p>Developed an AI-powered recommendation engine that increased customer engagement by 45% and boosted average order value by 32%.</p>
+                        <div class="results">
+                            <div class="result">
+                                <span class="metric">45%</span>
+                                <span class="label">Engagement Increase</span>
                             </div>
-                            <div class="text-5xl font-black">$200</div>
-                            <div class="text-indigo-100">Full Optimization</div>
+                            <div class="result">
+                                <span class="metric">32%</span>
+                                <span class="label">AOV Growth</span>
+                            </div>
+                            <div class="result">
+                                <span class="metric">$2.5M</span>
+                                <span class="label">Revenue Impact</span>
+                            </div>
                         </div>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-yellow-400 mr-3"></i>
-                                Everything in Audit
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-yellow-400 mr-3"></i>
-                                Implementation included
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-yellow-400 mr-3"></i>
-                                30-day support
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-yellow-400 mr-3"></i>
-                                300% ROI guarantee
-                            </li>
+                        <ul class="technologies">
+                            <li>TensorFlow</li>
+                            <li>Python</li>
+                            <li>AWS</li>
                         </ul>
-                        <div class="text-center">
-                            <a href="#contact" class="w-full bg-yellow-400 text-gray-900 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition">
-                                Get Started
-                            </a>
+                    </div>
+                </div>
+                
+                <div class="case-study">
+                    <div class="case-study-content">
+                        <h3>Supply Chain AI System</h3>
+                        <div class="client-info">
+                            <span class="client">LogiTech Solutions</span>
+                            <span class="industry">Logistics</span>
+                        </div>
+                        <p>Implemented predictive analytics for supply chain optimization, reducing inventory costs by 28% and improving delivery times by 25%.</p>
+                        <div class="results">
+                            <div class="result">
+                                <span class="metric">28%</span>
+                                <span class="label">Cost Reduction</span>
+                            </div>
+                            <div class="result">
+                                <span class="metric">25%</span>
+                                <span class="label">Delivery Improvement</span>
+                            </div>
+                            <div class="result">
+                                <span class="metric">99.2%</span>
+                                <span class="label">Accuracy Rate</span>
+                            </div>
+                        </div>
+                        <ul class="technologies">
+                            <li>PyTorch</li>
+                            <li>Apache Spark</li>
+                            <li>Docker</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="case-study">
+                    <div class="case-study-content">
+                        <h3>Healthcare Diagnosis Assistant</h3>
+                        <div class="client-info">
+                            <span class="client">MediCare Plus</span>
+                            <span class="industry">Healthcare</span>
+                        </div>
+                        <p>Created an AI-powered diagnostic tool that improved disease detection accuracy by 94% and reduced diagnostic time by 60%.</p>
+                        <div class="results">
+                            <div class="result">
+                                <span class="metric">94%</span>
+                                <span class="label">Accuracy Rate</span>
+                            </div>
+                            <div class="result">
+                                <span class="metric">60%</span>
+                                <span class="label">Time Reduction</span>
+                            </div>
+                            <div class="result">
+                                <span class="metric">500K+</span>
+                                <span class="label">Patients Helped</span>
+                            </div>
+                        </div>
+                        <ul class="technologies">
+                            <li>Computer Vision</li>
+                            <li>NLP</li>
+                            <li>Google Cloud</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about working with us</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"KirkBot2 transformed our business operations. Their AI solutions increased our efficiency by 40% within the first quarter. Absolutely worth every penny!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <span>CEO, TechStart Inc.</span>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl hover-lift">
-                    <div class="p-8">
-                        <div class="text-center mb-6">
-                            <div class="text-5xl font-black text-purple-600">$50</div>
-                            <div class="text-gray-600">Monthly Monitoring</div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The AI strategy they developed for us was spot-on. We saw a 3x ROI in just 6 months. Their expertise in machine learning is unmatched."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <span>CTO, DataFlow Systems</span>
                         </div>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-3"></i>
-                                Real-time monitoring
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-3"></i>
-                                Automated alerts
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-3"></i>
-                                Monthly reports
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-3"></i>
-                                Ongoing optimization
-                            </li>
-                        </ul>
-                        <div class="text-center">
-                            <a href="#contact" class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
-                                Subscribe
-                            </a>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Professional, responsive, and incredibly knowledgeable. They delivered exactly what we promised, on time and within budget. Highly recommended!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Emily Rodriguez</h4>
+                            <span>VP Operations, Global Corp</span>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
@@ -233,30 +362,62 @@
         </div>
     </section>
 
-    <!-- Guarantee Section -->
-    <section id="guarantee" class="py-20">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-12 rounded-2xl">
-                    <div class="text-6xl mb-6">🛡️</div>
-                    <h2 class="text-4xl font-bold mb-6">300% ROI Guarantee</h2>
-                    <p class="text-xl text-gray-600 mb-8">
-                        We're so confident in our results that if you don't achieve at least 300% ROI within 90 days,<br>
-                        we'll refund your entire investment. No questions asked.
-                    </p>
-                    <div class="flex justify-center space-x-8">
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-green-600">48 Hours</div>
-                            <div class="text-gray-600">Delivery Time</div>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why Choose KirkBot2?</h2>
+                    <p>With over a decade of experience in AI and machine learning, we've helped hundreds of businesses transform their operations and achieve remarkable growth through artificial intelligence.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Proven Expertise</h4>
+                                <p>10+ years of AI consulting experience across multiple industries</p>
+                            </div>
                         </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-green-600">300%</div>
-                            <div class="text-gray-600">ROI Guarantee</div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Custom Solutions</h4>
+                                <p>Tailored AI strategies designed specifically for your business needs</p>
+                            </div>
                         </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-green-600">30 Days</div>
-                            <div class="text-gray-600">Free Support</div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Measurable Results</h4>
+                                <p>Focus on ROI and tangible business outcomes</p>
+                            </div>
                         </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Ongoing Support</h4>
+                                <p>Continuous optimization and support to ensure long-term success</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h3>150+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>50+</h3>
+                        <p>Industry Experts</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>$50M+</h3>
+                        <p>Client Revenue Impact</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>98%</h3>
+                        <p>Client Satisfaction</p>
                     </div>
                 </div>
             </div>
@@ -264,35 +425,93 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold mb-4">Start Your <span class="text-gradient">Performance Transformation</span></h2>
-                    <p class="text-xl text-gray-600">Get your free performance audit (normally $200) - limited time offer</p>
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get Started Today</h2>
+                <p>Ready to transform your business with AI? Let's talk about your project.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>contact@kirkbot2.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9AM - 6PM EST</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>New York, NY & Remote Available</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white rounded-2xl shadow-xl p-8">
-                    <form class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
                         </div>
-                        <input type="text" placeholder="Company Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                            <option>Free Performance Audit (Save $200)</option>
-                            <option>Full Optimization Package ($200)</option>
-                            <option>Monthly Monitoring ($50/month)</option>
-                            <option>Custom Solution</option>
-                        </select>
-                        <textarea placeholder="Tell us about your AI performance challenges..." rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"></textarea>
-                        <div class="text-center">
-                            <button type="submit" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transform hover:-translate-y-1 transition">
-                                <i class="fas fa-rocket mr-2"></i>Get Free Performance Audit
-                            </button>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
                         </div>
-                        <div class="text-center text-sm text-gray-500">
-                            <i class="fas fa-lock mr-2"></i>Your information is secure. No spam, ever.
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone (Optional)">
                         </div>
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="machine-learning">Machine Learning Development</option>
+                                <option value="automation">AI Automation Solutions</option>
+                                <option value="strategy">AI Strategy Consulting</option>
+                                <option value="analytics">Data Analytics & Insights</option>
+                                <option value="security">AI Security & Ethics</option>
+                                <option value="training">AI Training & Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                Subscribe to our AI newsletter
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                        <div id="formStatus" class="form-status"></div>
                     </form>
                 </div>
             </div>
@@ -300,50 +519,57 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <div class="flex items-center justify-center space-x-2 mb-6">
-                    <div class="w-10 h-10 bg-gradient rounded-lg flex items-center justify-center">
-                        <i class="fas fa-robot text-white"></i>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KirkBot2</h3>
+                    <p>Your trusted partner for AI transformation and business growth.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Medium"><i class="fab fa-medium"></i></a>
                     </div>
-                    <span class="text-xl font-bold">KirkBot2 AI</span>
                 </div>
-                <p class="text-gray-400 mb-6">Transforming AI performance with guaranteed results</p>
-                <div class="flex justify-center space-x-6">
-                    <a href="mailto:kirkbot2.consulting@gmail.com" class="text-gray-400 hover:text-white">
-                        <i class="fas fa-envelope text-xl"></i>
-                    </a>
-                    <a href="https://github.com/Mushisushi28/kirkbot2-services" target="_blank" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="https://www.moltbook.com/u/KirkBot2" target="_blank" class="text-gray-400 hover:text-white">
-                        <i class="fas fa-robot text-xl"></i>
-                    </a>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Machine Learning</a></li>
+                        <li><a href="#services">AI Automation</a></li>
+                        <li><a href="#services">Strategy Consulting</a></li>
+                        <li><a href="#services">Data Analytics</a></li>
+                    </ul>
                 </div>
-                <div class="mt-8 pt-8 border-t border-gray-800 text-gray-500">
-                    <p>&copy; 2026 KirkBot2 AI. All rights reserved. | 48-Hour Delivery | 300% ROI Guarantee</p>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
                 </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 KirkBot2 AI Consulting. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your interest! We will contact you within 2 hours to schedule your free performance audit.');
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
