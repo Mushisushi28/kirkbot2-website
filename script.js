@@ -1,63 +1,53 @@
-// Navigation functionality
+// Website Functionality for KirkBot2 AI Consulting
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
+    initializeWebsite();
+});
+
+function initializeWebsite() {
+    // Initialize all components
+    initializeNavigation();
+    initializeScrollEffects();
+    initializeContactForms();
+    initializeBookingModal();
+    initializeAnimations();
+    initializeAnalytics();
     
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
+    console.log('KirkBot2 Website Initialized Successfully');
+}
+
+// Navigation functionality
+function initializeNavigation() {
+    const navbar = document.querySelector('.navbar');
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
     
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+    // Mobile navigation toggle
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
         });
-    });
+    }
     
-    // Navbar scroll effect
-    const navbar = document.getElementById('navbar');
+    // Scroll effect for navbar
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
         } else {
-            navbar.classList.remove('scrolled');
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = 'none';
         }
     });
     
-    // Active link highlighting
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    window.addEventListener('scroll', function() {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (scrollY >= (sectionTop - 100)) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').slice(1) === current) {
-                link.classList.add('active');
-            }
-        });
-    });
-    
-    // Smooth scrolling for navigation links
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href').slice(1);
-            const targetSection = document.getElementById(targetId);
-            
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80;
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offsetTop = target.offsetTop - 80; // Account for fixed navbar
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -65,84 +55,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
+}
 
-// Contact form functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-    const formStatus = document.getElementById('formStatus');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            const formObject = {};
-            formData.forEach((value, key) => {
-                formObject[key] = value;
-            });
-            
-            // Simulate form submission (replace with actual form submission logic)
-            submitForm(formObject);
-        });
-    }
-    
-    function submitForm(data) {
-        // Show loading state
-        formStatus.style.display = 'block';
-        formStatus.className = 'form-status';
-        formStatus.textContent = 'Sending message...';
-        
-        // Simulate API call
-        setTimeout(() => {
-            // Here you would typically send the data to your backend
-            // For now, we'll simulate a successful submission
-            
-            console.log('Form submitted with data:', data);
-            
-            // Show success message
-            formStatus.className = 'form-status success';
-            formStatus.textContent = 'Thank you for your message! We\'ll get back to you within 24 hours.';
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Hide status after 5 seconds
-            setTimeout(() => {
-                formStatus.style.display = 'none';
-            }, 5000);
-            
-            // Optional: Send data to a real backend service
-            // sendToBackend(data);
-        }, 1500);
-    }
-    
-    function sendToBackend(data) {
-        // Example of how you might send data to a backend service
-        fetch('https://your-backend-api.com/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(result => {
-            console.log('Success:', result);
-            formStatus.className = 'form-status success';
-            formStatus.textContent = 'Message sent successfully!';
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            formStatus.className = 'form-status error';
-            formStatus.textContent = 'Error sending message. Please try again.';
-        });
-    }
-});
-
-// Intersection Observer for animations
-document.addEventListener('DOMContentLoaded', function() {
+// Scroll animations and effects
+function initializeScrollEffects() {
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -157,249 +73,456 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Observe service cards
-    const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
+    // Observe elements for scroll animations
+    document.querySelectorAll('.service-card, .portfolio-item, .why-point').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
     });
     
-    // Observe case studies
-    const caseStudies = document.querySelectorAll('.case-study');
-    caseStudies.forEach(study => {
-        study.style.opacity = '0';
-        study.style.transform = 'translateY(30px)';
-        study.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(study);
+    // Parallax effect for hero section
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
     });
-    
-    // Observe testimonials
-    const testimonials = document.querySelectorAll('.testimonial');
-    testimonials.forEach(testimonial => {
-        testimonial.style.opacity = '0';
-        testimonial.style.transform = 'translateY(30px)';
-        testimonial.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(testimonial);
-    });
-    
-    // Observe stat cards
-    const statCards = document.querySelectorAll('.stat-card');
-    statCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
-    });
-});
+}
 
-// Counter animation for statistics
-document.addEventListener('DOMContentLoaded', function() {
-    const counters = document.querySelectorAll('.stat h3, .stat-card h3');
-    const speed = 200;
+// Contact form handling
+function initializeContactForms() {
+    const quickContactForm = document.getElementById('quickContactForm');
+    const consultationBooking = document.getElementById('consultationBooking');
     
-    const animateCounter = (counter) => {
-        const target = +counter.getAttribute('data-target');
-        const increment = target / speed;
-        
-        const updateCount = () => {
-            const count = +counter.innerText;
-            
-            if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                setTimeout(updateCount, 1);
-            } else {
-                counter.innerText = target;
-                // Add special formatting for the last counter
-                if (counter.innerText.includes('%')) {
-                    counter.innerText = target + '%';
-                } else if (counter.innerText.includes('+')) {
-                    counter.innerText = target + '+';
-                } else if (counter.innerText.includes('M')) {
-                    counter.innerText = '$' + target + 'M+';
-                } else if (counter.innerText.includes('K')) {
-                    counter.innerText = target + 'K+';
-                }
-            }
-        };
-        
-        updateCount();
+    // Quick contact form
+    if (quickContactForm) {
+        quickContactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleContactFormSubmission(this);
+        });
+    }
+    
+    // Consultation booking form
+    if (consultationBooking) {
+        consultationBooking.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleBookingSubmission(this);
+        });
+    }
+}
+
+function handleContactFormSubmission(form) {
+    const formData = new FormData(form);
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        company: formData.get('company'),
+        service: formData.get('service'),
+        message: formData.get('message'),
+        timestamp: new Date().toISOString(),
+        source: 'quick-contact-form'
     };
     
-    // Set up intersection observer for counters
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                entry.target.classList.add('animated');
-                
-                // Get the final value from the text content
-                const text = entry.target.innerText;
-                let targetValue = 0;
-                
-                if (text.includes('150')) {
-                    targetValue = 150;
-                } else if (text.includes('98')) {
-                    targetValue = 98;
-                } else if (text.includes('24')) {
-                    targetValue = 24;
-                } else if (text.includes('50')) {
-                    targetValue = 50;
-                } else if (text.includes('50M')) {
-                    targetValue = 50;
-                } else {
-                    // Extract number from text
-                    targetValue = parseInt(text.replace(/\D/g, '')) || 0;
-                }
-                
-                entry.target.setAttribute('data-target', targetValue);
-                entry.target.innerText = '0';
-                
-                animateCounter(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
+    // Show loading state
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
     
-    counters.forEach(counter => {
-        counterObserver.observe(counter);
-    });
-});
-
-// Form validation
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        const inputs = contactForm.querySelectorAll('input, select, textarea');
-        
-        inputs.forEach(input => {
-            input.addEventListener('blur', function() {
-                validateField(this);
-            });
+    // Process the form submission
+    processContactSubmission(data)
+        .then(response => {
+            showFormSuccess(form, 'Message sent successfully! I\'ll get back to you within 24 hours.');
+            form.reset();
             
-            input.addEventListener('input', function() {
-                if (this.classList.contains('error')) {
-                    validateField(this);
-                }
+            // Track conversion
+            trackEvent('contact_form_submitted', {
+                service: data.service,
+                source: 'quick-contact'
             });
+        })
+        .catch(error => {
+            showFormError(form, 'Sorry, there was an error sending your message. Please try again.');
+            console.error('Form submission error:', error);
+        })
+        .finally(() => {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
         });
+}
+
+function handleBookingSubmission(form) {
+    const formData = new FormData(form);
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        company: formData.get('company'),
+        service: formData.get('service'),
+        preferredTime: formData.get('time'),
+        timestamp: new Date().toISOString(),
+        source: 'booking-modal'
+    };
+    
+    // Show loading state
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Scheduling...';
+    submitButton.disabled = true;
+    
+    // Process the booking
+    processBookingSubmission(data)
+        .then(response => {
+            showFormSuccess(form, 'Consultation scheduled! You\'ll receive a confirmation email shortly.');
+            form.reset();
+            closeModal();
+            
+            // Track conversion
+            trackEvent('consultation_booked', {
+                service: data.service,
+                preferredTime: data.preferredTime
+            });
+        })
+        .catch(error => {
+            showFormError(form, 'Sorry, there was an error scheduling your consultation. Please try again.');
+            console.error('Booking error:', error);
+        })
+        .finally(() => {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        });
+}
+
+// Process contact submission (sends to backend/CRM)
+async function processContactSubmission(data) {
+    // In a real implementation, this would send to your backend
+    // For now, we'll simulate the submission and store locally
+    console.log('Processing contact submission:', data);
+    
+    // Store submission in localStorage for demo purposes
+    const submissions = JSON.parse(localStorage.getItem('kirkbot2_submissions') || '[]');
+    submissions.push(data);
+    localStorage.setItem('kirkbot2_submissions', JSON.stringify(submissions));
+    
+    // Simulate API call
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve({ success: true, id: Date.now() });
+        }, 1000);
+    });
+}
+
+// Process booking submission
+async function processBookingSubmission(data) {
+    console.log('Processing booking submission:', data);
+    
+    // Store booking in localStorage for demo purposes
+    const bookings = JSON.parse(localStorage.getItem('kirkbot2_bookings') || '[]');
+    bookings.push(data);
+    localStorage.setItem('kirkbot2_bookings', JSON.stringify(bookings));
+    
+    // Simulate calendar integration
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve({ 
+                success: true, 
+                bookingId: Date.now(),
+                confirmationUrl: '#'
+            });
+        }, 1500);
+    });
+}
+
+// Booking modal functionality
+function initializeBookingModal() {
+    const modal = document.getElementById('bookingModal');
+    const closeBtn = document.querySelector('.close');
+    const bookingOptions = document.querySelectorAll('.booking-option');
+    
+    // Close modal handlers
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
     }
     
-    function validateField(field) {
-        const fieldName = field.name;
-        const value = field.value.trim();
-        let isValid = true;
-        let errorMessage = '';
-        
-        // Remove existing error message
-        const existingError = field.parentNode.querySelector('.error-message');
-        if (existingError) {
-            existingError.remove();
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeModal();
         }
-        
-        // Validation rules
-        switch (fieldName) {
-            case 'name':
-                if (value.length < 2) {
-                    isValid = false;
-                    errorMessage = 'Name must be at least 2 characters long';
-                }
-                break;
-                
-            case 'email':
-                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailPattern.test(value)) {
-                    isValid = false;
-                    errorMessage = 'Please enter a valid email address';
-                }
-                break;
-                
-            case 'phone':
-                if (value && !/^[\d\s\-\+\(\)]+$/.test(value)) {
-                    isValid = false;
-                    errorMessage = 'Please enter a valid phone number';
-                }
-                break;
-                
-            case 'service':
-                if (!value) {
-                    isValid = false;
-                    errorMessage = 'Please select a service';
-                }
-                break;
-                
-            case 'message':
-                if (value.length < 10) {
-                    isValid = false;
-                    errorMessage = 'Message must be at least 10 characters long';
-                }
-                break;
-        }
-        
-        // Show or remove error styling
-        if (!isValid) {
-            field.classList.add('error');
-            const errorElement = document.createElement('div');
-            errorElement.className = 'error-message';
-            errorElement.textContent = errorMessage;
-            errorElement.style.color = '#ef4444';
-            errorElement.style.fontSize = '0.875rem';
-            errorElement.style.marginTop = '0.25rem';
-            field.parentNode.appendChild(errorElement);
-        } else {
-            field.classList.remove('error');
-        }
-        
-        return isValid;
-    }
-});
-
-// Add error styles to the document
-const style = document.createElement('style');
-style.textContent = `
-    .error {
-        border-color: #ef4444 !important;
-        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
-    }
-`;
-document.head.appendChild(style);
-
-// Initialize any tooltips or popovers
-document.addEventListener('DOMContentLoaded', function() {
-    // Add hover effects for interactive elements
-    const buttons = document.querySelectorAll('.btn');
-    buttons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px)';
-        });
-        
-        button.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
+    });
+    
+    // Booking option handlers
+    bookingOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const timeSlot = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+            showBookingForm(timeSlot);
         });
     });
-});
+}
 
-// Performance optimization: Lazy load images if needed
-document.addEventListener('DOMContentLoaded', function() {
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
+function openBooking(service = 'consultation') {
+    const modal = document.getElementById('bookingModal');
+    modal.style.display = 'block';
+    
+    // Pre-fill service if provided
+    const serviceSelect = document.getElementById('bookingService');
+    if (serviceSelect && service !== 'consultation') {
+        serviceSelect.value = service;
+    }
+    
+    // Track modal opening
+    trackEvent('booking_modal_opened', { service: service });
+}
+
+function closeModal() {
+    const modal = document.getElementById('bookingModal');
+    modal.style.display = 'none';
+    
+    // Reset form
+    const bookingForm = document.getElementById('bookingForm');
+    const bookingOptions = document.querySelector('.booking-options');
+    
+    if (bookingForm) bookingForm.style.display = 'none';
+    if (bookingOptions) bookingOptions.style.display = 'grid';
+}
+
+function showBookingForm(timeSlot) {
+    const bookingOptions = document.querySelector('.booking-options');
+    const bookingForm = document.getElementById('bookingForm');
+    
+    if (bookingOptions) bookingOptions.style.display = 'none';
+    if (bookingForm) bookingForm.style.display = 'block';
+    
+    // Store time slot preference
+    localStorage.setItem('preferredTimeSlot', timeSlot);
+}
+
+// Form success/error handling
+function showFormSuccess(form, message) {
+    // Remove any existing alerts
+    const existingAlert = form.querySelector('.form-alert');
+    if (existingAlert) {
+        existingAlert.remove();
+    }
+    
+    // Create success message
+    const alert = document.createElement('div');
+    alert.className = 'form-alert success';
+    alert.textContent = message;
+    alert.style.cssText = `
+        background: #10b981;
+        color: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    `;
+    
+    form.insertBefore(alert, form.firstChild);
+    
+    // Remove after 5 seconds
+    setTimeout(() => {
+        if (alert.parentNode) {
+            alert.remove();
+        }
+    }, 5000);
+}
+
+function showFormError(form, message) {
+    // Remove any existing alerts
+    const existingAlert = form.querySelector('.form-alert');
+    if (existingAlert) {
+        existingAlert.remove();
+    }
+    
+    // Create error message
+    const alert = document.createElement('div');
+    alert.className = 'form-alert error';
+    alert.textContent = message;
+    alert.style.cssText = `
+        background: #ef4444;
+        color: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    `;
+    
+    form.insertBefore(alert, form.firstChild);
+    
+    // Remove after 8 seconds
+    setTimeout(() => {
+        if (alert.parentNode) {
+            alert.remove();
+        }
+    }, 8000);
+}
+
+// Animation system
+function initializeAnimations() {
+    // Animate numbers in stats
+    const animateNumbers = () => {
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        statNumbers.forEach(stat => {
+            const target = parseFloat(stat.textContent);
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                
+                // Format the number
+                if (stat.textContent.includes('%')) {
+                    stat.textContent = current.toFixed(0) + '%';
+                } else if (stat.textContent.includes('x')) {
+                    stat.textContent = current.toFixed(1) + 'x';
+                } else {
+                    stat.textContent = current.toFixed(0);
+                }
+            }, 16);
+        });
+    };
+    
+    // Trigger number animation when stats section is visible
+    const statsSection = document.querySelector('.about-stats');
+    if (statsSection) {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
+                    animateNumbers();
+                    observer.unobserve(entry.target);
                 }
             });
+        }, { threshold: 0.5 });
+        
+        observer.observe(statsSection);
+    }
+    
+    // Add hover effects to cards
+    document.querySelectorAll('.service-card, .portfolio-item').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
         });
         
-        document.querySelectorAll('img[data-src]').forEach(img => {
-            imageObserver.observe(img);
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(-5px) scale(1)';
         });
-    }
-});
+    });
+}
 
-// Utility function to debounce scroll events
+// Analytics and tracking
+function initializeAnalytics() {
+    // Page view tracking
+    trackEvent('page_view', {
+        page: window.location.pathname,
+        title: document.title,
+        timestamp: new Date().toISOString()
+    });
+    
+    // Track button clicks
+    document.querySelectorAll('button, .btn-primary, .btn-secondary, .btn-service').forEach(button => {
+        button.addEventListener('click', function() {
+            const buttonText = this.textContent.trim();
+            trackEvent('button_click', {
+                button_text: buttonText,
+                button_class: this.className,
+                page: window.location.pathname
+            });
+        });
+    });
+    
+    // Track service card interactions
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const serviceTitle = this.querySelector('h3').textContent;
+            trackEvent('service_card_interaction', {
+                service: serviceTitle,
+                page: window.location.pathname
+            });
+        });
+    });
+    
+    // Track scroll depth
+    let maxScroll = 0;
+    window.addEventListener('scroll', function() {
+        const scrollPercent = Math.round(
+            (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+        );
+        
+        if (scrollPercent > maxScroll) {
+            maxScroll = scrollPercent;
+            
+            // Track milestone scroll depths
+            if (maxScroll === 25 || maxScroll === 50 || maxScroll === 75 || maxScroll === 90) {
+                trackEvent('scroll_depth', {
+                    depth: maxScroll,
+                    page: window.location.pathname
+                });
+            }
+        }
+    });
+    
+    // Track time on page
+    let startTime = Date.now();
+    window.addEventListener('beforeunload', function() {
+        const timeOnPage = Math.round((Date.now() - startTime) / 1000);
+        trackEvent('time_on_page', {
+            duration_seconds: timeOnPage,
+            page: window.location.pathname
+        });
+    });
+}
+
+function trackEvent(eventName, data = {}) {
+    // Enhanced analytics tracking
+    const eventData = {
+        event: eventName,
+        timestamp: new Date().toISOString(),
+        url: window.location.href,
+        user_agent: navigator.userAgent,
+        referrer: document.referrer,
+        ...data
+    };
+    
+    // Store in localStorage for demo purposes
+    const events = JSON.parse(localStorage.getItem('kirkbot2_analytics') || '[]');
+    events.push(eventData);
+    localStorage.setItem('kirkbot2_analytics', JSON.stringify(events));
+    
+    // In a real implementation, you would send this to your analytics service
+    console.log('Analytics Event:', eventData);
+    
+    // You could also send to Google Analytics, Plausible, etc.
+    if (typeof gtag !== 'undefined') {
+        gtag('event', eventName, data);
+    }
+}
+
+// Performance optimization
+function optimizeImages() {
+    // Lazy loading for images
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+}
+
+// Utility functions
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -412,9 +535,45 @@ function debounce(func, wait) {
     };
 }
 
-// Optimize scroll performance
-const optimizedScroll = debounce(() => {
-    // Any scroll-based animations or calculations
-}, 10);
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
 
-window.addEventListener('scroll', optimizedScroll);
+// Service worker registration (for PWA functionality)
+function registerServiceWorker() {
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                    console.log('SW registered: ', registration);
+                })
+                .catch(registrationError => {
+                    console.log('SW registration failed: ', registrationError);
+                });
+        });
+    }
+}
+
+// Initialize performance optimizations
+document.addEventListener('DOMContentLoaded', function() {
+    optimizeImages();
+    registerServiceWorker();
+});
+
+// Export functions for external use
+window.KirkBot2Website = {
+    openBooking,
+    closeModal,
+    trackEvent,
+    processContactSubmission,
+    processBookingSubmission
+};
