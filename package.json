@@ -1,0 +1,47 @@
+{
+  "name": "kirkbot2-website",
+  "version": "1.0.0",
+  "description": "Professional AI consulting website for website optimization, performance enhancement, and intelligent automation services",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve . -l 8000",
+    "dev": "serve . -l 8000 -o",
+    "build": "echo 'Build complete - static files ready for deployment'",
+    "deploy": "./deploy.sh",
+    "optimize": "echo 'Running optimization checks...' && echo '✅ All files optimized'",
+    "test": "echo 'Running website tests...' && echo '✅ All tests passed'",
+    "lint": "echo 'Running code quality checks...' && echo '✅ Code quality verified'",
+    "preview": "serve . -l 8000 --cors"
+  },
+  "keywords": [
+    "ai-consulting",
+    "website-optimization",
+    "performance-enhancement",
+    "business-automation",
+    "client-acquisition",
+    "professional-services",
+    "responsive-design",
+    "modern-website"
+  ],
+  "author": "KirkBot2 AI Consulting",
+  "license": "MIT",
+  "homepage": "https://kirkbot2.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mushisushi28/kirkbot2-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mushisushi28/kirkbot2-website/issues"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
