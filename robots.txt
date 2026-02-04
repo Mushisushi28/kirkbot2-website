@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kirkbot2.github.io/kirkbot2-website/sitemap.xml
+
+# Crawl-delay (optional)
+Crawl-delay: 1
